@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: healthcare-app
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-me}
+      APP_ENCRYPTION_KEY: ${APP_ENCRYPTION_KEY:-Y4j5k2A5Vw2Qe6WxZ7NRbO6_3CNj8rjvEwL1M0M1Z7wA=}
+    volumes:
+      - .:/app
+    restart: unless-stopped

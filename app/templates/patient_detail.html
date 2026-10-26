@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Patient Detail</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">Patients</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="container">
+    <h1>Patient Record</h1>
+    <dl>
+      <dt>Name</dt><dd>{{ patient["first_name"] }} {{ patient["last_name"] }}</dd>
+      <dt>Date of Birth</dt><dd>{{ patient["dob"] }}</dd>
+      <dt>SSN</dt><dd>{{ patient["ssn"] }}</dd>
+      <dt>MRN</dt><dd>{{ patient["mrn"] }}</dd>
+      <dt>Diagnosis</dt><dd>{{ patient["diagnosis"] }}</dd>
+      <dt>Last Visit</dt><dd>{{ patient["last_visit"] }}</dd>
+    </dl>
+  </div>
+</body>
+</html>
